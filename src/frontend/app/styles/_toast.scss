@@ -1,0 +1,13 @@
+// toast
+
+.vue-toast-manager_container {
+  z-index: 100000;
+}
+
+.vue-toast-manager_container.__top.__full-width {
+  top: 0;
+}
+
+.vue-toast-manager_container.__full-width .vue-toast_container {
+  width: 100%;
+}

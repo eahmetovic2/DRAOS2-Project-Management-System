@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Definitions>
+  <!--korisnik-->
+  <Definition Execution="korisnik_zabranjena_promjena_lozinke" Name="Zabranjena promjena lozinke"></Definition>
+  <Definition Execution="neuspjesna_promjena_lozinke" Name="Neuspješna promjena lozinke"></Definition>
+
+</Definitions>

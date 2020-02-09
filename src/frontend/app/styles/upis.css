@@ -1,0 +1,978 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.upis-prijava .application--wrap{
+    background-image: url(online_upis_bg_3x.png) !Important;
+    background-repeat: no-repeat !Important;
+    background-position: center top !Important;
+    background-size: cover !Important;
+    /* background-attachment: fixed; */
+    /*background-origin: content-box, border-box !Important;*/
+    padding: 0px !Important;
+}
+
+.upis-prijava #prijava-layout{
+    position: unset;
+    justify-content: left;
+}
+
+.upis-prijava-forma{
+    margin-left: 13%;
+    margin-top: 14%;
+    max-width: 25% !Important;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgba(21, 23, 69, 1);
+}
+
+.upis-prijava .input-group.input-group--text-field:not(.input-group--single-line):not(.input-group--error).input-group--focused label{
+    color: rgba(21, 23, 69, 1) !Important;
+}
+
+.upis-prijava-forma .input-group__input{
+    color: rgba(165, 164, 191, 1);  
+}
+
+.upis-prijava .input-group input, .upis-prijava .input-group textarea{
+    color: rgba(21, 23, 69, 1) !Important;
+}
+
+.upis-prijava-forma .btn {
+    font-weight: 400;
+    background-color: #ed3059 !important;
+    border-color: #ed3059 !important;
+}
+
+.upis-ministarstvo{
+    margin-top: 25%;
+    display: block;
+}
+
+#prijava-ministarstvo{
+    width: 100% !important;
+}
+
+.upis-ministarstvo #prijava-ministarstvo img {
+    height: 40px;
+}
+
+.upis-prijava-layout a{
+    text-decoration: none;
+}
+
+/* .upis-prijava-poruka{
+    float: left;
+} */
+
+.upis-prijava-poruka p{
+    font-size: 18px;
+}
+
+.upis-prijava-izmedju{
+    height: 50px;
+}
+
+/* .upis-ministarstvo .layout{
+    display: block;
+} */
+
+.upis-prijava-forma #prijava-ministarstvo-text{
+    /*font-size: 16px;*/
+    color: rgba(21, 23, 69, 1);
+}
+
+.upis-prijava .input-group:not(.input-group--error) label {
+    color: rgba(0,0,0,.54) !important;
+}
+
+.upis-obavijest{
+    text-align: left;
+}
+
+.upis{
+    background-color: #fff !Important;   
+    height: 80px; 
+}
+
+.upis-sidebar{
+    background-color: #fff !Important;
+    /*width: 290px !Important;*/
+}
+
+.upis-toolbar{
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(-90deg, #3b86ff, 	#4665ff, #543bff); 
+    font-family:  'Montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+    /* font-size: 21px;
+    font-weight: bold; */
+    text-align: center;    
+}
+
+.upis-toolbar .toolbar__title{
+    margin-top: 22px;
+}
+
+.title2{
+    width: 65%;
+    padding-left: 25px;
+}
+
+.title2 img{
+    float: left;
+    margin-right: 18px;
+}
+
+.title2 p{
+    /* position: absolute;
+    top: 29px;
+    left: 410px;
+    height: 23px;
+    width: 50%; */
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    /* font-weight: 600; */
+    color: 	#43425d;
+    text-align: left;
+    line-height: 23px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+/*     -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); */
+}
+
+/* .navigation-drawer{
+    margin-top: 65px;
+} */
+
+.upis .toolbar__content{
+    height: 100% !Important;
+}
+
+.upis-menu2, .upis-menu2 #account-menu, .upis-menu2 .menu__activator{
+    height: 100%;
+}
+
+
+
+.upis-menu2 .primary{
+    background-color: #fff !Important;   
+    color: 	#43425d; 
+    border-color: #43425d !Important;   
+    border-left: 1px solid;
+    border-right: 1px solid;
+    height: 100%;
+    width: 300px;   
+}
+
+.upis-menu2 .btn{
+    margin: 0px;
+}
+.upis-menu2 .icon{
+    color: #43425d !Important; 
+}
+
+.upis-btn {
+/*     border-left: #43425d 2px solid;
+    border-right: #43425d 2px solid; */
+    height: 100%;
+    width: 300px;
+}
+
+.upis-sidebar-manu .list__tile--avatar{
+    height: 20px;
+}
+
+.upis-sidebar-manu .list__tile__action{
+    display: none;      
+}
+
+.upis-sidebar-manu .icon{
+    color: rgba(59, 134, 255, 1) !Important;
+}
+
+.upis-sidebarmenu li{
+    height: 60px;
+    width: 98%; 
+    font-family: 'Source Sans Pro', sans-serif;   
+    font-size: 16px !Important;
+    font-weight: 600 !Important;
+}
+
+.upis-sidebarmenu .list--group__header>li:first-child{
+    background:	hsla(217, 100%, 62%, 0.3);
+    border-radius: 0px 100px 100px 0px;
+    border-left: hsla(217, 100%, 62%, 1) 6px solid;
+}
+
+.upis-sidebarmenu .list--group__header>li:first-child:hover {
+    background:	hsla(217, 100%, 62%, 0.3);
+    border-radius: 0px 100px 100px 0px;
+}
+
+.upis-sidebarmenu .list__tile{
+    height: 60px !Important; 
+    border-radius: 0px 100px 100px 0px;  
+}
+
+.upis-sidebarmenu .list__tile__title{
+    font-size: 16px;
+    font-weight: normal; 
+    color: rgba(165, 164, 191, 1);      
+}
+
+.upis-sidebarmenu .list__tile--active{      
+    color: rgba(59, 134, 255, 1) !important;  
+}
+
+.upis-head-menu-item, .upis-head-icon-item{    
+    color: rgba(59, 134, 255, 1) !important;  
+}
+
+.upis-sidebarmenu .list__tile:after, .upis-sidebarmenu .list--group:after{
+    background: rgb(255, 255, 255) !Important; 
+}
+
+.upis-sidebarmenu .list__tile{
+    
+}
+
+
+.upis-manji-naslov{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+    color: #43425d;
+    text-transform: none;
+}
+
+.upis-tabs li{
+    
+}
+
+.upis-tabs a{
+    background-color: #fff;    
+    /* width: 90%; */
+}
+
+.upis-tabs .tabs__item{
+    border-bottom: 4px solid #a5a4bf !important;
+}
+
+.upis-tab1 .tabs__item--active{
+    border-bottom: 4px solid #3b86ff !important;
+}
+
+.upis-tab2 .tabs__item--active{
+    border-bottom: 4px solid rgba(65, 207, 154, 1) !important;
+}
+
+.upis-tab3 .tabs__item--active{
+    border-bottom: 4px solid rgba(255, 152, 106, 1) !important;
+}
+
+.upis-tab-bar{
+    background-color: #f0f0f7;
+    height: 78px;
+}
+
+.upis-tab-bar .tabs__item{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    justify-content: left;
+    text-align: left;
+    text-transform: none;
+}
+
+.upis-tab-panel{
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.upis-tab-panel .expansion-panel__header{
+    border-bottom: solid 1px #bebdd0;
+   /* font-family: 'Source Sans Pro', sans-serif;*/
+    text-transform: uppercase;    
+}
+
+.upis-tab-panel .table tbody tr:not(:last-child) {
+    border-bottom: 0px solid rgba(0,0,0,.12);
+}
+
+.upis-column{    
+    font-size: 16px;
+    color: rgba(0,0,0,.54);
+}
+
+.upis-tab-panel-filter{
+    font-family: 'Source Sans Pro', sans-serif;
+    border-bottom: solid 1px #bebdd0;
+    text-transform: uppercase;  
+    padding-top: 0px;
+    padding-bottom: 10px; 
+}
+
+.upis-tab-panel th{
+    color: rgba(0,0,0,.54) !important;
+    /* font-weight: normal !important; */
+}
+
+.upis-tab-small{
+    width: 30px;
+}
+
+.upis-tab-2{
+    border: 1px solid rgba(215, 218, 226, 1); 
+    font-family: 'Source Sans Pro', sans-serif;       
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.upis-tab-2 .tabs__item--active {
+    border-bottom: 0px !important;
+    color: #3b86ff !important;
+}
+
+.upis-tab-2 .tabs__item{
+    border: 0px;
+    text-transform: none;
+    color: #43425d;
+}
+
+.upis-tab-table{
+    font-family: 'Source Sans Pro', sans-serif !important;    
+}
+
+.upis-tab-table tr:not(:last-child) {
+    border-bottom: 0px !important;
+}
+
+.upis-dialog{
+    margin-bottom: 0px;
+}
+
+.upis-dialog-text{
+    width: 85%;
+    float: right;
+    margin-bottom: 40px;
+}
+
+.btn.btn--outline{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    border: 1px solid rgba(59, 134, 255, 1);
+    color: rgba(59, 134, 255, 1) !important; 
+}
+
+.upis-content .v-card{
+    box-shadow: none;    
+}
+
+.upis-card{
+    background: #f0f0f7;
+    margin-top: 40px;
+}
+
+.upis-card .manji-naslov{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    color: rgba(67, 66, 93, 1);
+}
+
+.upis-card-text .btn, .upis-izbor .btn{
+    font-family: 'Source Sans Pro', sans-serif;
+    /* font-size: 20px; */
+    color: rgba(59, 134, 255, 1) !important; 
+    border: 1px solid rgba(59, 134, 255, 1);
+}
+
+.upis-izbor .btn{
+    background: transparent !important; 
+}
+
+.subicon{
+    margin-left: 15px;    
+}
+
+.choose-school-item{
+    background-color: #fff !important;
+    border: 3px solid rgba(59, 134, 255, 1);    
+}
+
+.choose-school-item .white--text{
+    color: rgba(59, 134, 255, 1)!important;
+}
+
+.choose-school-item2{
+    background-color: #fff !important;
+    border: 3px solid rgba(65, 207, 154, 1);  
+}
+
+.choose-school-item2 .white--text{
+    color: rgba(65, 207, 154, 1)!important;
+}
+
+
+.choose-school-item3{
+    background-color: #fff !important;
+    border: 3px solid rgba(255, 152, 106, 1);    
+}
+
+.choose-school-item3 .white--text{
+    color: rgba(255, 152, 106, 1)!important;
+}
+
+.choose-school-item .upis-disabled, .choose-school-item2 .upis-disabled, .choose-school-item3 .upis-disabled{    
+    color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.upis-izbor{
+    background: #f0f0f7;
+}
+
+.upis-izbor-2{
+    background-color: #f0f0f7 !important;
+}
+
+.upis-datatable .table{
+    background-color: #f0f0f7 !important;
+}
+
+.upis-datatable .upis-datatable2{
+    background-color: #fff !important;
+}
+
+nav#main-toolbar-upis {
+    z-index: 100;
+}
+
+.upis-izbor .manji-naslov{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 28px;
+    color: rgba(67, 66, 93, 1);
+    margin-top: 30px;    
+    margin-right: 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+
+.izbor-prikaz-card .v-card{
+    min-height: 134px;
+    height: 155px !important;
+}
+
+.upis-izbor p{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    text-align: left;
+    color: rgba(165, 164, 191, 1);
+}
+
+button.manji-naslov.btn.btn--flat.btn--icon.secondary--text {
+    margin: 0;
+}
+
+.upis-izbor-placeholder{
+    padding-left: 10px;
+}
+
+.upis-izbor-placeholder p, .upis-izbor-placeholder .avatar{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.upis-flex .v-card, .upis-flex2 .v-card, .upis-flex3 .v-card{
+    padding-bottom: 10px;
+    border-left: 4px solid;    
+    padding-top: 5px;
+}
+
+.upis-flex .v-card{
+    border-color: rgba(59, 134, 255, 1);
+}
+
+.upis-flex2 .v-card{
+    border-color: rgba(65, 207, 154, 1);
+}
+
+.upis-flex3 .v-card{
+    border-color: rgba(255, 152, 106, 1);
+}
+
+.upis-disabled-card .v-card{
+    border-color: rgba(165, 164, 191, 1);
+}
+
+/* .upis-skola{
+    padding-top: 10px;
+} */
+
+.upis-skola, .upis-smjer{
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: left;
+    padding-left: 10px;
+    width: 300px;
+    float: left;
+}
+
+/* .upis-izbor-box h1{
+    padding-top: 0px !important;
+} */
+
+.upis-smjer{
+    font-weight: normal;
+}
+
+
+.upis-flex .btn, .upis-flex2 .btn, .upis-flex3 .btn{
+    margin-top: 5px;
+    color: rgba(165, 164, 191, 1) !important;
+    border-width: 0px;
+}
+
+.upis-flex h4, .upis-flex2 h4, .upis-flex3 h4{
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.upis-flex .upis-izbor-placeholder h1, .upis-flex2 .upis-izbor-placeholder h1, .upis-flex3 .upis-izbor-placeholder h1{    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 109px;
+    font-weight: 600;
+    line-height: 0.1;
+    float: right;
+    /*padding-top: 35px;*/
+}
+
+.upis-flex .upis-izbor-placeholder h1{
+    color: rgba(59, 134, 255, 1);
+}
+
+.upis-flex2 .upis-izbor-placeholder h1{
+    color: rgba(65, 207, 154, 1);
+}
+
+.upis-flex3 .upis-izbor-placeholder h1{
+    color: rgba(255, 152, 106, 1);
+}
+
+.upis-disabled-card .upis-izbor-placeholder h1{
+    color: rgba(165, 164, 191, 1) !important;
+}
+
+ .upis-disabled-card{
+    opacity: 0.7;
+} 
+
+.upis-dialog{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.upis-dialog .btn{
+    background-color: #ffffff !important;
+    border: 1px solid rgba(59, 134, 255, 1) !important;   
+    color:  rgba(59, 134, 255, 1);
+}
+
+.upis-toolbar .toolbar__side-icon{
+    float: left;
+    color: #fff;
+    margin-top: 18px;
+    display: none;
+}
+
+.upis-izbor .container{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.upis-button-cont .btn{
+    float: none;
+}
+
+.upis-izvjestaj{
+    margin-top: 10px;
+}
+
+.upis-izbor-box-text{
+    min-height: 70px;
+    width: calc(100% - 70px);
+    display: inline-block;
+    height: 96px;
+}
+
+.upis-placeholder{
+    padding-top: 30px;
+}
+
+.upis-izbor-broj{
+    width: 70px;
+    float: right;
+}
+
+.upis-izbor-broj h1{
+    padding-top: 35px;
+}
+
+.upis-content .expansion-panel__container {
+    overflow-x: auto;
+}
+
+@media only screen and (max-width: 1600px) {
+    .upis-sidebar{        
+        width: 280px !Important;
+    }
+
+    .upis-izbor-placeholder p, .upis-izbor-placeholder .avatar{
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px;
+    }
+
+    .upis-skola, .upis-smjer{
+        width: 100%; /*267px;*/
+    }
+
+    .upis-izbor-box h1 {
+        padding-top: 35px !important;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .upis-sidebar{        
+        width: 260px !Important;
+    }
+
+    .upis-prijava-forma {
+        /* margin-left: 13%; */
+        margin-top: 20%; 
+        max-width: 35% !Important;
+    }
+
+    .upis-flex .v-card, .upis-flex2 .v-card, .upis-flex3 .v-card {
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .upis-toolbar .toolbar__side-icon{
+        display: block;
+    }
+
+    .title2 p{
+        font-size: 12px;
+    }
+
+    .upis-sidebar{        
+        width: 250px !Important;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .upis-menu2 .primary{
+        width: 250px;
+    }
+
+    .upis-prijava .application--wrap{
+        background-position: left top !Important;
+    }
+
+    .upis-hide1{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .upis-menu2 .primary{
+        width: 200px;
+    }
+
+    .upis-prijava-forma {
+        /* margin-left: 13%; */
+        margin-top: 30%; 
+        max-width: 55% !Important;
+    }
+
+    .upis-hide2{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .title2 p{
+        display: none;
+    } 
+    
+    .upis-prijava-forma {
+        margin-left: 10%;
+        margin-top: 40%; 
+        max-width: 65% !Important;
+    }
+
+    .upis .title2{
+        width: 45%;
+    } 
+
+}
+
+@media only screen and (max-width: 640px) {    
+    .upis-menu2 .primary{
+        width: 80px;
+    }
+
+    .account-icon-after, .account-text{
+        display: none;
+    }
+
+    .upis-prijava-forma {
+        margin-left: 5%; 
+        margin-top: 40%; 
+        max-width: 65% !Important;
+    }
+
+    .upis-prijava .application--wrap{
+        background-position: -150px 0px !Important;
+    }
+
+    .upis-hide3{
+        display: none;
+    }
+
+    .upis-komentar form{
+        margin-right: 0px;
+    }
+
+    .upis-support-card{
+        margin-right: 0px;
+    }
+
+    .upis-menu2 #account-menu{
+        margin-right: 0px;
+    }
+    .upis-menu2{
+        margin-right: 0px !Important;
+    }
+
+    .upis-toolbar .toolbar__title {
+        width: 180px;
+    }
+
+    .upis-support-card, .upis-komentar-form {
+        margin-left: 0px !Important;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .title2 {
+        display: none;
+    }    
+    .upis-menu2 .primary{
+        width: 80px;
+    }
+
+    .account-icon-after, .account-text {
+        display: none;
+    }
+
+    .upis-prijava-forma {
+        /* margin-left: 13%; */
+        margin-top: 50%; 
+        max-width: 65% !Important;
+    }
+
+    .upis-hide4, .upis-hide5{
+        display: none;
+    }
+    
+    .upis-komentar form{
+        margin-right: 0px !Important;
+    }
+
+    .upis-support-card{
+        margin-right: 0px !Important;
+    }
+}
+
+/*Rang lista*/
+
+.upis-ranglista{
+    margin-top: 10px;    
+}
+
+.upis-blue{
+    border-left: 5px solid #3b86ff;
+}
+
+.upis-green{
+    border-left: 5px solid rgba(65, 207, 154, 1);
+}
+
+.upis-yellow{
+    border-left: 5px solid rgba(255, 152, 106, 1)
+}
+
+.upis-card-text{
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.upis-datatable2 td{
+    color: rgba(0,0,0,.54);
+}
+
+.upis-ranglista-item td{
+    color: rgba(0,0,0,.87) !Important;
+    font-weight: bold !Important;
+}
+.napomena-icon {
+  margin-left:0px;
+}
+.napomena-card {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.application.theme--light.upis-mod{
+    background: #f0f0f7;
+}
+
+.upis-card .v-card__title{
+    background: #f0f0f7;
+}
+
+.upis-card .v-card__text{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.upis-support-btn{
+    float: none !Important;
+}
+
+.upis-support-head{
+    background: #f0f0f7 !Important;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.upis-support-head .upis-table{
+    background: #f0f0f7 !Important;
+    text-align: left;
+    width: 60%; 
+    margin-top: 25px;  
+    margin-left: 33px;
+}
+
+.upis-table tr, .upis-table2 tr{
+    border-bottom: 0px !Important;    
+}
+
+.upis-table tr{
+    height: 30px !Important;
+}
+
+.upis-table tr th, .upis-table tr td{
+    font-size: 15px !Important;
+}
+
+.upis-table-head{
+    color: rgba(0,0,0,.54);
+    width: 10%;
+}
+
+.upis-support-card{
+    margin-left: 57px;
+    margin-right: 105px;
+}
+
+/* .upis-komentar-card{
+    margin-top: 20px;
+} */
+
+.upis-komentar-card.v-card, .upis-komentar-card .table{
+    background: #f0f0f7;
+}
+
+.upis-komentar-card .v-card__text{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.upis-komentar-card table.table thead tr {
+    height: 26px;
+}
+
+.upis-komentar-card .komentar.odgovor, .upis-support-icon{
+    float: left !Important;
+}
+
+.upis-komentar-card .komentar{
+    width: 90%;
+    background: #f0f0f7 !Important;
+}
+
+.upis-komentar-card .tekst-komentara{
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 10px !Important;
+}
+
+.upis-komentar-card .datum-komentara{
+    padding: 0px !Important;
+}
+
+.upis-komentar-card .table tbody tr{
+    border-bottom: 0px !Important;
+}
+
+.upis-support-icon{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.upis-komentar form{
+    margin-left: 59px;
+    margin-right: 105px;
+}
+
+.upis-komentar .komentar{
+    float: left;
+    height: auto;
+}
+
+.upis-btn-d{
+    font-family: 'Source Sans Pro', sans-serif;
+    /* font-size: 20px; */
+    color: rgba(59, 134, 255, 1) !important;
+    border: 1px solid rgba(59, 134, 255, 1);
+    float: right;
+    margin-bottom: 50px;
+}
+
+.upis-menu2{
+    margin-right: 0 !important;
+}
+
+.upis-menu2 #account-menu {
+    margin-right: 0 !important;
+}
+
+.upis-menu2 #account-menu .btn {
+    left: 0 !important;
+}
+
+.upis-card .expansion-panel__container {
+    overflow-x: auto;
+}
+
+.upis-support-aktivan{
+    color: rgba(65, 207, 154, 1);
+}
+
+.upis-support-zavrsen{
+    color: rgba(255, 152, 106, 1)
+}

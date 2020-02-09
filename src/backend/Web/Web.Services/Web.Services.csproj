@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ISvjedocanstvaService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Web.Core\Web.Core.csproj" />
+    <ProjectReference Include="..\Web.Entities\Web.Entities.csproj" />
+    <ProjectReference Include="..\Web.Models.Mapping\Web.Models.Mapping.csproj" />
+    <ProjectReference Include="..\Web.Models\Web.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.2" />
+    <PackageReference Include="Easy.MessageHub" Version="5.0.0" />
+    <PackageReference Include="MailKit" Version="2.2.0" />
+    <PackageReference Include="MimeKit" Version="2.2.0" />
+  </ItemGroup>
+</Project>

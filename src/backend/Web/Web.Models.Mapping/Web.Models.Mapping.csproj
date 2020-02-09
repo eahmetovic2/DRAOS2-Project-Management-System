@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+ 
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.9.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Web.Core\Web.Core.csproj" />
+    <ProjectReference Include="..\Web.Entities\Web.Entities.csproj" />
+    <ProjectReference Include="..\Web.Models\Web.Models.csproj" />
+  </ItemGroup>
+
+</Project>

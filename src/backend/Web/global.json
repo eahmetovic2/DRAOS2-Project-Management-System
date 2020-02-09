@@ -1,0 +1,6 @@
+{
+  "projects": [ "Web.Api", "Web.Core", "Web.Entities", "Web.Models", "Web.Models.Mapping", "Web.Services", "Web.UserAgent" ],
+  "sdk": {
+    "version": "2.2.300"
+  }
+}

@@ -1,0 +1,49 @@
+// Custom styles
+
+
+@import "custom";
+@import "index";
+
+.v-card__text{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.toasted-container .toasted .icon {
+    padding: 0 !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.theme--light.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
+    background-color: #2C9898;
+}
+
+
+.v-btn--flat {
+    color: black !important;
+    margin: 6px 8px;
+}
+
+.v-btn--flat .v-icon {
+    font-size: 22px !important;
+}
+
+.toolbar-autocomplete .v-text-field {
+    padding: 0;
+    margin: 0;
+    color: white !important;
+    caret-color: white !important;
+}
+
+.toolbar-autocomplete .primary--text {
+    padding: 0;
+    margin: 0;
+    color: white !important;
+    caret-color: white !important;
+}
+
+.sidebar-list-title  {
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    padding: 0 !important;
+}

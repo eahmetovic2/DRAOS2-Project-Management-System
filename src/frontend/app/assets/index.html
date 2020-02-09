@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/codemirror.min.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/codemirror.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/3.21.0/mode/javascript/javascript.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="vendor.css">
+    <link rel="stylesheet" href="app.css">
+	<link href="/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/css/simple-line-icons.css" rel="stylesheet">
+
+    <title>Project Management System</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="card container auth-container">
+        <div class="card-block" id="ucitavanje-postavki">
+          <p>Učitava se stranica...</p>
+
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated active" style="width: 100%">
+            </div>
+          </div>
+        </div>
+        <div class="card-block" id="pretrazivac" style="display: none; font-size: 16px; margin: 20px;">
+            <p>Vaš internet pretraživač nije podržan.</p>
+
+            <p>Molimo vas da instalirate <a href="http://google.com/chrome/browser/desktop/index.html">Google Chrome</a> ili noviju verziju nekog drugog pretraživača.</p>
+          </div>
+      </div>
+    </div>
+
+    <div id="notifikation"></div>
+    <script type="text/javascript" src="vendor.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript">
+      /**
+       * vrati false ako je internet explorer ili neki stariji pretrazivac
+      */
+      function supported() {
+        var ua = navigator.userAgent, tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+        window.navigator.verzija = (function(){
+          if(/trident/i.test(M[1])){
+              tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+              return 'IE '+(tem[1] || '');
+          }
+          if(M[1]=== 'Chrome'){
+              tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+              if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+          }
+          M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+          if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+          return M.join(' ');
+        })();
+
+        var brver = window.navigator.verzija.split(" ");
+        var browser = brver[0];
+        var verzija = brver[1];
+
+        if (browser === 'IE') {
+          return false;
+        }
+
+        if (browser === 'Chrome') {
+          return verzija >= 49;
+        }
+
+        if (browser === 'Opera') {
+          return verzija >= 42;
+        }
+
+        if (browser === 'Firefox') {
+          return verzija >= 44;
+        }
+
+        return true;
+      }
+
+      if (supported()) {
+        require('index');
+      } else {
+        document.getElementById("ucitavanje-postavki").style.display = 'none';
+        document.getElementById("pretrazivac").style.display = 'block';
+      }
+    </script>
+  </body>
+</html>

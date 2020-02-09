@@ -1,0 +1,31 @@
+@import "custom-variables";
+
+.dodaj-btn .v-btn {
+    padding: 0;
+    margin: 0;
+}
+
+.toolbar-btn {
+    color: white !important;
+}
+
+.toolbar-btn .v-btn {
+    padding: 5px;
+    margin: 0 15px 0 0 !important;
+    color: white !important;
+}
+
+.toolbar-btn .v-icon {
+    font-size: 22px !important;
+    color: white !important;
+}
+
+.dodaj-btn .v-icon {
+    font-size: 22px !important;
+}
+
+.card-naslov {
+    font-size: 18px !important;
+    padding-top: 3px;
+    display: inline-block;
+}

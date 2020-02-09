@@ -1,0 +1,19 @@
+env => {
+  const debugConf = {
+    AUTH_TOKEN_NAME: "TMS_TOKEN",
+    DOZVOLJENE_AKCIJE_NAME: "TMS_DOZVOLJENE_AKCIJE",
+    SERVICE_ROOT: "http://localhost:50086",
+    ENVIRONMENT: "debug"
+  };
+
+  const productionConf = {
+    AUTH_TOKEN_NAME: "TMS_TOKEN",
+    DOZVOLJENE_AKCIJE_NAME: "TMS_DOZVOLJENE_AKCIJE",
+    SERVICE_ROOT: "api",
+    ENVIRONMENT: "production"
+  };
+
+  if (env.NODE_ENV === 'production')
+    return productionConf;
+  return debugConf;
+};
