@@ -45,3 +45,10 @@ public/
 .deploy*/
 src/_drafts
 package-lock.json
+
+### artifacts ###
+artifacts/frontend/
+artifacts/frontend/app.css
+artifacts/frontend/app.js
+artifacts/frontend/vendor.css
+artifacts/frontend/vendor.js
