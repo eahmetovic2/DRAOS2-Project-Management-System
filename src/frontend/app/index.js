@@ -159,6 +159,9 @@ Vue.component('material-stats-card', StatsCard);
 
 import vueScrollBehavior from 'vue-scroll-behavior';
 
+import GSTC from "gantt-schedule-timeline-calendar";
+//import "gantt-schedule-timeline-calendar/dist/style.css";
+Vue.component('GSTC', GSTC);
 
 import draggable from 'vuedraggable';
 Vue.component('draggable', draggable);

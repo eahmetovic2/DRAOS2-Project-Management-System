@@ -8,6 +8,13 @@
                     <v-text-field :counter="128" label="Naziv" :rules="rules.nazivZahtjeva" v-model="zahtjevModel.naziv" required class="required"></v-text-field>
                     <v-textarea multi-line label="Opis" :rules="rules.opisZahtjeva" v-model="zahtjevModel.opis" required class="required"></v-textarea>
 
+
+                    <v-flex xs12 sm4 md4>
+                        <span>Početak izrade: </span>
+                        <m-datepicker v-model="zahtjevModel.pocetakIzrade"></m-datepicker>
+                    </v-flex>
+
+
                     <v-flex xs12 sm4 md4>
                         <span>Zahtjev kreirao: </span>
                         <span>{{ zahtjevModel.createdBy }}</span>
@@ -69,6 +76,7 @@ import {
 } from 'api/resources';
 import Identity from 'auth/identity';
 import HelpTipDialogMixin from 'helpers/help-tip-dialog-mixin';
+import MDatepicker from '../components/m-datepicker';
 export default {
     name: 'EditZahtjev',
     mixins: [HelpTipDialogMixin],
@@ -399,6 +407,9 @@ export default {
             this.ucitajSupportKorisnikeZaZahtjevKategoriju(id);
         }
     },
-    resolve: {}
+    resolve: {},
+    components: {
+        MDatepicker
+    }
 };
 </script>

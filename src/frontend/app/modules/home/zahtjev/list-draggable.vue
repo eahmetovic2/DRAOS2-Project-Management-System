@@ -56,7 +56,9 @@ font-weight: bold !important;
     font-size: 16px;
     color: black;
 }
-
+.task:hover {
+    cursor: pointer;
+}
 .prethodni-broj-dana {
     max-width: 35%;
     float: right;
@@ -332,6 +334,7 @@ export default {
             promise.then(success, error);
         },
         otvoriZahtjev(id) {
+            this.$route.params.zahtjevId = id;
             this.pregledZahtjevaId = id;
             this.dialogPregledZahtjeva = true;
         },

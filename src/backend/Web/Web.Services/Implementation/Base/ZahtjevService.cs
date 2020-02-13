@@ -263,7 +263,7 @@ namespace Web.Services.Implementation.Base
 
 
 
-            var zahtjeviProjekta = query.ToZahtjevListModelItem()
+            var zahtjeviProjekta = query.ToZahtjevListModelItem().OrderBy(x => x.PocetakIzrade)
                 .ToList();
 
             if (zahtjeviProjekta == null)
@@ -462,6 +462,7 @@ namespace Web.Services.Implementation.Base
                 zahtjev.ZahtjevPrioritetId = model.ZahtjevPrioritetId;
                 zahtjev.DatumIzmjene = DateTime.Now;
                 zahtjev.ModifiedBy = model.ModifiedBy;
+                zahtjev.PocetakIzrade = model.PocetakIzrade;
 
                 if (ImaPravo("zahtjev_zahtjev_edit_dodijeljeni_korisnik"))
                 {

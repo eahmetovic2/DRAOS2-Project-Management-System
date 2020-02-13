@@ -41,7 +41,7 @@ a {
         <v-flex v-if="childOmogucenHeader" slot="header">
             <v-layout row justify-space-between>
                 <v-flex>
-                    <span class="card-naslov">Zadaci </span>
+                    <span class="card-naslov">{{naslov}} </span>
                 </v-flex>
                 
         <v-flex v-if="childOmogucenoDodavanjeIFiltriranje" class="text-xs-right toolbar-btn">
@@ -118,7 +118,7 @@ a {
             <v-data-table :hide-actions="childSakrijPrikazPaginacije" v-bind:headers="childHeadersiZaPrikaz" v-bind:items="model.items" v-bind:pagination.sync="pagination" :total-items="totalItems" no-data-text="Nema zadataka za prikaz." :loading="loading" :rows-per-page-items="rowsPerPageItems" :columns="columns" :rows="rows">
                 <template slot="items" scope="props">
 
-                    <tr @click="otvoriZahtjev(props.item.id)">
+                    <tr >
 
                         <td v-if="showColumn('Naziv')">{{ props.item.naziv }}</td>
                         <td v-if="showColumn('Opis')" style="max-width: 250px">{{ props.item.opis }}</td>
@@ -139,7 +139,7 @@ a {
                             <v-menu open-on-hover offset-y>
                                 <v-icon slot="activator">settings</v-icon>
                                 <v-list>
-                                    <v-list-tile :to="{ name: 'home.zahtjev.pregled', params: {zahtjevId: props.item.id }}">
+                                    <v-list-tile @click="otvoriZahtjev(props.item.id)" >
                                         <v-list-tile-title>Pregled zahtjeva</v-list-tile-title>
                                     </v-list-tile>
                                     <!-- <v-list-tile :to="{ name: 'home.projekat.edit', params: {projekatId: props.item.id }}">
@@ -573,6 +573,9 @@ export default {
             promise.then(success, error);
         },
         otvoriZahtjev(id) {
+            console.log("Otvori", id)
+            
+            this.$route.params.zahtjevId = id;
             this.pregledZahtjevaId = id;
             this.dialogPregledZahtjeva = true;
             /*  this.$router.push({

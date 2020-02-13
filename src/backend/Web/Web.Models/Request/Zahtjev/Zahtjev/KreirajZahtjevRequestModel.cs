@@ -10,7 +10,8 @@ namespace Emis.Web.Models.Request
 		public string Opis {get; set;}
 		[Required]
 		public int ProjekatId {get; set;}
-		public string DodijeljeniKorisnikIme {get; set;}
+		public string DodijeljeniKorisnikIme {get; set; }
+		public DateTime PocetakIzrade { get; set; }
 		public DateTime EstimiranoVrijeme {get; set;}
 		public DateTime PotrošenoVrijeme {get; set;}
 		[Required]

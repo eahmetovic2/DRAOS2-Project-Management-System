@@ -7,6 +7,7 @@
 import ListaProjekata from './list';
 import DodavanjeProjekta from './dodavanje';
 import PregledProjekta from './pregled';
+import TokProjekta from './tok';
 import EditProjekta from './edit';
 
 export default {
@@ -29,6 +30,10 @@ export default {
             path: ':projekatId',
             name: 'home.projekat.pregled',
             component: PregledProjekta
+        }, {
+            path: 'tok/:projekatId',
+            name: 'home.projekat.tok',
+            component: TokProjekta
         }
     ]
 };

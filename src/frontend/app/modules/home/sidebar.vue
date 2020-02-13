@@ -94,7 +94,7 @@
             <v-list-group no-action class="sidebar-list v-list-item">
                 <v-list-tile slot="activator" class="sidebar-list-title" avatar>
                     <v-list-tile-action>
-                        <v-icon>question_answer</v-icon>
+                        <v-icon>assignment</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                         <v-list-tile-title>Zadaci</v-list-tile-title>
@@ -114,30 +114,14 @@
             <!-- Zahtjevi -->
 
 
-            <v-list-group v-if="imaPravo('glavni_meni_osnovno_sidebar_projekti')" no-action class="sidebar-list v-list-item" :active-class="color">
-                <v-list-tile :to="{name: 'home.projekat.list'}" slot="activator" class="sidebar-list-title" avatar >
-                    <v-list-tile-action>
-                        <v-icon>library_books</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title>Projekti</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile class="v-list-item" :active-class="color">
-                    <v-list-tile-content>
-                        <v-list-tile-title color='white'>Tok izrade</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list-group>
-
-            <!-- <v-list-tile v-if="imaPravo('glavni_meni_osnovno_sidebar_projekti')" :to="{name: 'home.projekat.list'}" class="v-list-item" :active-class="color">
+            <v-list-tile v-if="imaPravo('glavni_meni_osnovno_sidebar_projekti')" :to="{name: 'home.projekat.list'}" class="v-list-item" :active-class="color">
                 <v-list-tile-action>
                     <v-icon>view_comfy</v-icon>
                 </v-list-tile-action>
                 <v-list-tile-content>
                     <v-list-tile-title color='white'>Projekti</v-list-tile-title>
                 </v-list-tile-content>
-            </v-list-tile> -->
+            </v-list-tile>
 
             <v-list-tile v-if="imaPravo('glavni_meni_osnovno_sidebar_korisnici')" :to="{name: 'home.korisnik.list'}" class="v-list-item" :active-class="color">
                 <v-list-tile-action>

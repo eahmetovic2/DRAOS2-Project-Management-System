@@ -26,6 +26,7 @@ namespace Emis.Web.Models.Response
         public string ZahtjevPrioritet { get; set; }
 
         public DateTime? DatumKreiranja { get; set; }
+        public DateTime? PocetakIzrade { get; set; }
 
         public string CreatedBy { get; set; }
 

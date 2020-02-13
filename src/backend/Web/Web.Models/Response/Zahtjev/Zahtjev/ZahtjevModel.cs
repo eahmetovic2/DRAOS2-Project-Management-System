@@ -32,6 +32,7 @@ namespace Emis.Web.Models.Response
 
         public DateTime? DatumKreiranja { get; set; }
         public DateTime? DatumIzmjene { get; set; }
+        public DateTime? PocetakIzrade { get; set; }
 
         public ZahtjevStatusModel ZahtjevStatus { get; set; }
 

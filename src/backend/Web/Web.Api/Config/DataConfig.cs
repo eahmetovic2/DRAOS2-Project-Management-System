@@ -26,7 +26,7 @@ namespace Web.Api.Config
             IConfigurationRoot configuration)
         {
             // add entity framework
-            var connectionString = configuration.GetConnectionString("TMSContext");
+            var connectionString = configuration.GetConnectionString("PMSContext");
             services.AddDbContext<Context>(options => options.UseSqlServer(connectionString, x=> x.UseRowNumberForPaging()));
         }
 

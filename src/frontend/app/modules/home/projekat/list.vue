@@ -53,6 +53,9 @@
                                     <v-list-tile :to="{ name: 'home.projekat.pregled', params: {projekatId: props.item.id }}">
                                         <v-list-tile-title>Pregled projekta</v-list-tile-title>
                                     </v-list-tile>
+                                    <v-list-tile :to="{ name: 'home.projekat.tok', params: {projekatId: props.item.id }}">
+                                        <v-list-tile-title>Tok projekta</v-list-tile-title>
+                                    </v-list-tile>
                                     <!-- <v-list-tile :to="{ name: 'home.projekat.edit', params: {projekatId: props.item.id }}">
                                     <v-list-tile-title>Izmijeni projekat</v-list-tile-title>
                                 </v-list-tile> -->

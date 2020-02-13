@@ -24,7 +24,7 @@ namespace Web.Api
             var configuration = builder.Build();
 
             // podesimo bazu
-            var connectionString = configuration.GetConnectionString("TMSContext");
+            var connectionString = configuration.GetConnectionString("PMSContext");
 
             var optionsBuilder = new DbContextOptionsBuilder<Context>();
             optionsBuilder.UseSqlServer(connectionString, x => x.UseRowNumberForPaging());

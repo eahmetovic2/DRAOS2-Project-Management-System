@@ -24,14 +24,21 @@
                                     <v-flex xs12 sm12 md12>
                                         <v-text-field multi-line label="Opis" :rules="rules.opisZahtjeva" required v-model="zahtjevModel.opis"></v-text-field>
                                     </v-flex>
+                                    <v-flex xs12 sm12 md12>
+                                        <span>Početak izrade: </span>
+                                        <m-datepicker v-model="zahtjevModel.pocetakIzrade"></m-datepicker>
+                                    </v-flex>
 
-                                    <v-flex v-if="dijeloviProjekta.length!=0" xs12 sm6 md6 :style="{display: dijeloviProjekta.length>1 ? 'visible' : 'none'}">
+                                    <v-flex v-if="dijeloviProjekta.length!=0" xs12 :style="{display: dijeloviProjekta.length>1 ? 'visible' : 'none'}">
                                         <v-select required class="required" @input="ucitajKategorijeZahtjeva" :items="dijeloviProjekta" item-text="naziv" item-value="id" label="Podprojekat" v-model="zahtjevModel.dioProjekta" bottom></v-select>
                                     </v-flex>
-                                    <v-flex xs12 sm6 md6>
-                                        <v-select required class="required" :items="kategorijeZahtjeva" item-text="naziv" item-value="id" label="Kategorija zahtjeva" v-model="zahtjevModel.kategorija" bottom></v-select>
+                                    <v-flex xs12>
+                                        <v-select  @input="ucitajSupportKorisnike" required class="required" :items="kategorijeZahtjeva" item-text="naziv" item-value="id" label="Kategorija zahtjeva" v-model="zahtjevModel.kategorija" bottom></v-select>
                                     </v-flex>
 
+                                    <v-flex v-if="imaPravo('zahtjev_zahtjev_edit_dodijeljeni_korisnik')" xs12>
+                                        <v-select required class="required" clearable :items="supportKorisnici" item-text="korisnickoIme" item-value="korisnickoIme" label="Dodijeljeni korisnik" v-model="zahtjevModel.dodijeljeniKorisnikIme" bottom></v-select>
+                                    </v-flex>
                                     <!-- <v-btn style="width: 100%" color="tertiary" v-if="!prikazDodatnihOpcija" @click="prikaziDodatneOpcije">Prikaži dodatne opcije</v-btn>
                                     <v-btn style="width: 100%" color="tertiary" v-else @click="sakrijDodatneOpcije">Sakrij dodatne opcije</v-btn>
 
@@ -91,25 +98,28 @@
 <script>
 import {
     ProjekatResource,
-    ZahtjevResource
+    ZahtjevResource,
+    KorisnikResource
 } from 'api/resources';
 import Identity from "auth/identity";
 import Upit from "../components/upit";
 import HelpTipDialogMixin from "helpers/help-tip-dialog-mixin";
 import UploadMixin from "helpers/upload-mixin";
+import MDatepicker from '../components/m-datepicker';
 
 export default {
     name: "DodavanjeZahtjeva",
 
     components: {
-        Upit
+        Upit,
+        MDatepicker
     },
     mixins: [HelpTipDialogMixin, UploadMixin],
     props: {
         poruka: {
             type: String,
             default: 'Dodaj fajl u prilog zahtjeva'
-        }
+        },
         /*,
 
                 vrstaDokumenta: {
@@ -123,6 +133,7 @@ export default {
                 type: String,
                 default: ".jpg,.png,.jpeg"
             },
+        supportKorisnici: [],
 
             /*addParam(formData, item, vrstaDokumenta) {
                 if (this.uploads == null) {
@@ -199,6 +210,25 @@ export default {
     },
     methods: {
 
+        ucitajSupportKorisnikeZaZahtjevKategoriju(id) {
+            var that = this;
+            var success = (response) => {
+                that.supportKorisnici = response.body;
+            };
+            var error = (poruka) => {
+                this.$toast.error(poruka.body);
+            };
+
+            var promise = KorisnikResource().vratiSupportKorisnikeZaZahtjevKategoriju({
+                zahtjevKategorijaId: id
+            });
+            promise.
+            then(success, error);
+        },
+        ucitajSupportKorisnike(id) {
+            this.zahtjevModel.dodijeljeniKorisnikIme = null;
+            this.ucitajSupportKorisnikeZaZahtjevKategoriju(id);
+        },
         snimiObjekt(model) {
             this.zahtjevModel.dokument = model.result;
 
@@ -353,6 +383,7 @@ export default {
                 for (var i = 0; i < that.kategorijeZahtjeva.length; i++) {
                     {
                         that.zahtjevModel.kategorija = that.kategorijeZahtjeva[i].id;
+                        that.ucitajSupportKorisnike(that.zahtjevModel.kategorija);
                         break;
                     }
                 }
@@ -404,6 +435,9 @@ export default {
                 zahtjev.zahtjevPrioritetId = that.zahtjevModel.prioritet;
                 zahtjev.dioProjektaId = that.zahtjevModel.dioProjekta;
                 zahtjev.dokumentId = that.zahtjevModel.dokument;
+                zahtjev.pocetakIzrade = that.zahtjevModel.pocetakIzrade;
+                zahtjev.dodijeljeniKorisnikIme = that.zahtjevModel.dodijeljeniKorisnikIme;
+                
 
                 var promise = ZahtjevResource().dodajNoviZahtjev({
                     projekatId: zahtjev.projekatId

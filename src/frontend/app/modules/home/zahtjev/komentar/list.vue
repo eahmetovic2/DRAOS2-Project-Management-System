@@ -51,12 +51,9 @@
 }
 
 #upload-file-komentar {
-    background-color: #f5f5f5;
-    font-family: 'Arial', sans-serif;
     letter-spacing: 0.2px;
     color: #777;
     transition: background-color .2s linear;
-    height: 200px;
     padding: 5px;
 }
 
@@ -95,66 +92,61 @@
 /*.dz-remove {
     /*display: none
 }*/
+.opis-zahtjeva {
+    margin-top: 24px;
+    margin-bottom: 4px;
+    font-weight: 550;
+}
+.upis-komentar-form {
+    margin-top: 12px;
+    border-radius: 5px;
+    border:#f1f1f1 solid 2px;
+    padding: 15px;
+}
+.osoba-komentar {
+    color: #949494;
+}
 </style>
 <template>
 <page>
+    <v-flex>
+        <v-flex class="opis-zahtjeva">Komentari</v-flex>
 
-    <material-card color="primary">
-        <br>
-        <v-form v-model="valid" ref="form" class="upis-komentar-form">
-
-            <v-textarea :counter="2000" label="Komentar" v-model="model.komentar" :rules="komentarLengthRules" required class="required" outline></v-textarea>
-            <v-layout pb-3 row justify-space-around>
-                <v-flex>
-                    <vue-dropzone ref="dropzone" id="upload-file-komentar" :options="dropzoneOptions" @vdropzone-removed-file="removeAllFiles" @vdropzone-success="(file, response) => snimiObjekt(response)" @vdropzone-sending="(file, xhr, formData) => addParam(formData, model, vrstaDokumenta)">
-                        <div class="dropzone-custom-content">
-                            <h3 class="dropzone-custom-title">Drag and drop to upload content!</h3>
-
-                            <div class="text-xs-center">
-                            <i aria-hidden="true" class="material-icons icon">file_upload</i>
-                            <p> Upload </p>
-                        </div>
-                        </div>
-
-                    </vue-dropzone>
-                </v-flex>
-            </v-layout>
-
-            <v-flex xs12 sm12 md12 lg12 text-xs-right>
-                <v-btn type="button" @click="onSubmit">Snimi</v-btn>
-            </v-flex>
-
-        </v-form>
-
-        <h4>Komentari: </h4>
-
-        <v-data-table no-data-text="Nema komentara" v-bind:items="listaKomentara" :hide-actions="true">
+        <v-data-table no-data-text="Nema komentara" v-bind:items="listaKomentara" :hide-actions="true" hide-headers>
             <template slot="items" scope="props">
-                <tr>
+                <tr >
                     <!-- <v-icon class="upis-support-icon">person_outline</v-icon> -->
-                    <div>
-                        <span class="text-boldiran">{{props.item.createdBy}}</span>
-
-                        <span class="text-datum">{{props.item.datumKreiranja.substring(8,10) + '.' + props.item.datumKreiranja.substring(5,7)+ '.'+props.item.datumKreiranja.substring(0,4) + '. ' + props.item.datumKreiranja.substring(11,19)}}</span>
-
-                        <br>
-
+                    <div style="padding: 8px 14px;">
+                        <div class="osoba-komentar">
+                            <span >{{props.item.createdBy}}</span>
+                            <span class="text-datum">{{props.item.datumKreiranja.substring(8,10) + '.' + props.item.datumKreiranja.substring(5,7)+ '.'+props.item.datumKreiranja.substring(0,4) + '. ' + props.item.datumKreiranja.substring(11,19)}}</span>
+                        </div>
                         <span>
                             {{ props.item.komentar }}
                         </span>
+                        <div v-if="props.item.priloziKomentara.length!=0">
+                            Prilozi komentara: <a @click="preuzmiDokument(props.item.priloziKomentara[0].id)"> {{props.item.priloziKomentara[0].naziv}} </a>
+                        </div>
 
                     </div>
-                    <br>
-                </tr>
-
-                <tr v-if="props.item.priloziKomentara.length!=0">
-                    <td>Prilozi komentara:<a @click="preuzmiDokument(props.item.priloziKomentara[0].id)"> {{props.item.priloziKomentara[0].naziv}}
-                        </a></td>
                 </tr>
             </template>
         </v-data-table>
-        <br>
-    </material-card>
+        <v-form v-model="valid" ref="form" class="upis-komentar-form">
+            <v-textarea :counter="2000" label="Napiši komentar..." v-model="model.komentar" :rules="komentarLengthRules" required class="required"></v-textarea>              
+            <v-layout row justify-space-around>
+                <v-flex xs3>
+                    <vue-dropzone ref="dropzone" id="upload-file-komentar" :options="dropzoneOptions" 
+                        @vdropzone-removed-file="removeAllFiles" @vdropzone-success="(file, response) => snimiObjekt(response)" 
+                        @vdropzone-sending="(file, xhr, formData) => addParam(formData, model, vrstaDokumenta)"/>
+                </v-flex>
+                <v-spacer/>
+                <v-flex xs6 text-xs-right>
+                    <v-btn type="button" @click="onSubmit">Dodaj</v-btn>
+                </v-flex>
+            </v-layout>
+        </v-form>
+    </v-flex>
 </page>
 </template>
 
@@ -204,7 +196,7 @@ export default {
                 acceptedFiles: ".pdf,.txt,.jpg,.png,.jpeg,.doc,.docx,.xls,xlsx,.PDF,.TXT,.JPG,.PNG,.JPEG,.DOC,.DOCX,.XLS,.XLSX",
                 addRemoveLinks: true,
                 thumbnailWidth: 300,
-                dictDefaultMessage: '<i aria-hidden="true" class="material-icons icon">file_upload</i><br />' + this.poruka
+                dictDefaultMessage: '<i aria-hidden="true" class="material-icons icon">file_upload</i><span class="upload-text">Dodaj prilog</span>'
             },
             onFocus: false,
             valid: false,

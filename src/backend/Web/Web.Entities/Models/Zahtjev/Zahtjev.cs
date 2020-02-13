@@ -18,6 +18,7 @@ namespace Web.Entities.Models.Zahtjev
         public string Naziv { get; set; }
 
         public string Opis { get; set; }
+        public DateTime PocetakIzrade { get; set; }
         //u sekundama izrazeno u bazi
         public long? EstimiranoVrijeme { get; set; }
         //u sekundama izrazeno u bazi

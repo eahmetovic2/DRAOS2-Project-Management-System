@@ -29,7 +29,8 @@ namespace Web.Models.Mapping.Mappers.Base.ZahtjevMap
                 DatumKreiranja = zahtjev.DatumKreiranja,
                 DatumIzmjene = zahtjev.DatumIzmjene,
                 DodijeljeniKorisnikIme=zahtjev.DodijeljeniKorisnikIme ?? null,
-                PotrosenoVrijeme=TimeSpan.FromSeconds(zahtjev.PotrošenoVrijeme ?? 0).ToString(@"dd\:hh\:mm\:ss")
+                PotrosenoVrijeme=TimeSpan.FromSeconds(zahtjev.PotrošenoVrijeme ?? 0).ToString(@"dd\:hh\:mm\:ss"),
+                PocetakIzrade = zahtjev.PocetakIzrade
 
         });
         }
@@ -58,7 +59,8 @@ namespace Web.Models.Mapping.Mappers.Base.ZahtjevMap
                 DatumKreiranja = zahtjev.DatumKreiranja,
                 CreatedBy = zahtjev.CreatedBy,
                 Projekat = zahtjev.Projekat.Naziv,
-                DioProjekta = zahtjev.ZahtjevKategorija.DioProjekta.Naziv
+                DioProjekta = zahtjev.ZahtjevKategorija.DioProjekta.Naziv,
+                PocetakIzrade = zahtjev.PocetakIzrade
 
 
                 /*Uloga = string.Join(", ", zahtjev.ZahtjevKategorije

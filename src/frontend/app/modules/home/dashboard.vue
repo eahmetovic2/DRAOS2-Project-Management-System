@@ -64,29 +64,28 @@
 
 <template>
 <div v-if="ulogaPorvjera">
-    {{$ml.get('sidebar.radna_ploca')}}
 
     <v-layout wrap>
         <v-flex v-if="imaPravo('osnovno_dashboard_broj_zahtjeva_potrebno_uraditi')" class="card-padding" sm6 xs12 md6 lg3>
-            <material-stats-card color="green" icon="question_answer" v-model="model.brojZahtjevaPotrebnoUraditi" title="Broj zadataka" sub-icon="mdi-calendar" sub-text="Zadaci koje je potrebno uraditi" />
+            <material-stats-card color="orange" icon="assignment" v-model="model.brojZahtjevaPotrebnoUraditi" title="Broj zadataka za uraditi" />
         </v-flex>
         <v-flex v-if="imaPravo('osnovno_dashboard_broj_zahtjeva_u_progresu')" class="card-padding" sm6 xs12 md6 lg3>
-            <material-stats-card color="orange" icon="filter_none" title="Broj zadataka" v-model="model.brojZahtjevaUProgresu" sub-icon="info" sub-icon-color="error" sub-text="Zadaci u progresu" sub-text-color="text-primary" />
+            <material-stats-card color="info" icon="dynamic_feed" title="Broj zadataka u izradi" v-model="model.brojZahtjevaUProgresu" />
         </v-flex>
         <v-flex v-if="imaPravo('osnovno_dashboard_broj_zahtjeva_ukupno')" class="card-padding" sm6 xs12 md6 lg3>
-            <material-stats-card color="green" icon="filter_none" title="Broj zadataka" v-model="model.brojZahtjevaUkupno" sub-icon="info" sub-text="Ukupan broj zadataka" sub-text-color="text-primary" />
+            <material-stats-card color="green" icon="filter_none" title="Ukupan broj zadataka" v-model="model.brojZahtjevaUkupno" />
         </v-flex>
         <v-flex v-if="imaPravo('osnovno_dashboard_broj_zahtjeva_nisu_rijeseni')" class="card-padding" sm6 xs12 md6 lg3>
-            <material-stats-card color="orange" icon="filter_none" title="Broj zahtjeva" v-model="model.brojZahtjevaKojiNisuRijeseni" sub-icon="info" sub-icon-color="error" sub-text="Zadaci koji nisu riješeni" sub-text-color="text-primary" />
+            <material-stats-card color="orange" icon="filter_none" title="Broj zadataka koji nisu riješeni" v-model="model.brojZahtjevaKojiNisuRijeseni" />
         </v-flex>
         <v-flex class="card-padding" sm6 xs12 md6 lg3>
-            <material-stats-card color="green" icon="filter_none" title="Broj zadataka" v-model="model.brojZavrsenihZahtjeva" sub-icon="mdi-calendar" sub-text="Završeni zadaci" />
+            <material-stats-card color="green" icon="check_circle" title="Broj završenih zadataka" v-model="model.brojZavrsenihZahtjeva"/>
         </v-flex>
         <v-flex v-if="imaPravo('osnovno_dashboard_broj_projekata')" class="card-padding" sm6 xs12 md6 lg3>
-            <material-stats-card color="green" icon="view_comfy" title="Broj projekata" v-model="model.brojProjekata" sub-icon="mdi-calendar" sub-text="Svi projekti" />
+            <material-stats-card color="primary" icon="view_comfy" title="Broj projekata" v-model="model.brojProjekata" />
         </v-flex>
         <v-flex v-if="imaPravo('osnovno_dashboard_broj_komentara_korisnika_ukupno')" class="card-padding" sm6 xs12 md6 lg3>
-            <material-stats-card color="green" icon="view_comfy" title="Broj komentara" v-model="model.brojKomentaraKorisnika" sub-icon="mdi-calendar" sub-text="Svi komentari korisnika" />
+            <material-stats-card color="green" icon="view_comfy" title="Ukupan broj komentara" v-model="model.brojKomentaraKorisnika"  />
         </v-flex>
 
         <!-- <v-layout align-center row fill-height>
@@ -114,7 +113,7 @@
             </material-chart-card>
         </v-flex>
         <v-flex v-if="imaPravo('osnovno_dashboard_broj_zahtjeva_po_projektu')" class="card-padding" md12 sm12 lg4>
-            <material-chart-card v-if="ucitanBrojZahtjevaPoProjektu" :data="zahtjeviPoProjektimaChart.data" :options="zahtjeviPoProjektimaChart.options" :responsive-options="zahtjeviPoProjektimaChart.responsiveOptions" color="red" type="Bar">
+            <material-chart-card v-if="ucitanBrojZahtjevaPoProjektu" :data="zahtjeviPoProjektimaChart.data" :options="zahtjeviPoProjektimaChart.options" :responsive-options="zahtjeviPoProjektimaChart.responsiveOptions" color="orange" type="Bar">
                 <h4 class="title font-weight-light">Zadaci po projektima</h4>
                 <p class="category d-inline-flex font-weight-light">Ukupan broj svih zadataka po projektima</p>
             </material-chart-card>
@@ -166,9 +165,6 @@
             <lista-zahtjeva-projekat v-if="ucitaniZahtjeviZadnjiRijeseni" :lista-zahtjeva="zahtjeviZadnjiRijeseni" :omoguceno-dodavanje-i-filtriranje="false" :naslov="'Zahtjevi zadnji koji su riješeni'" headersi-za-prikaz="10101010000" :sakrij-prikaz-paginacije="true"></lista-zahtjeva-projekat>
         </v-flex>
 
-        <v-flex v-if="imaPravo('osnovno_dashboard_lista_dodijeljenih_projekata')" class="card-padding" md12 lg6>
-            <lista-projekata :omoguceno-dodavanje-i-filtriranje="false"></lista-projekata>
-        </v-flex>
     </v-layout>
 </div>
 </template>
@@ -345,7 +341,6 @@ export default {
                 2: false
             },
             lozinka: "",
-            identity: Identity,
 
         };
     },
