@@ -102,12 +102,12 @@
                 </v-list-tile>
                 <v-list-tile :to="{name: 'home.zahtjev.list'}" class="v-list-item" :active-class="color">
                     <v-list-tile-content>
-                        <v-list-tile-title color='white'>Svi zadaci</v-list-tile-title>
+                        <v-list-tile-title color='white'>Lista svih zadataka</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
                 <v-list-tile v-if="imaPravo('osnovno_dashboard_broj_zahtjeva_po_projektu')" :to="{name: 'home.zahtjev.list-draggable'}" class="v-list-item" :active-class="color">
                     <v-list-tile-content>
-                        <v-list-tile-title color='white'>Zadaci po projektima</v-list-tile-title>
+                        <v-list-tile-title color='white'>Zadaci po statusima</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list-group>

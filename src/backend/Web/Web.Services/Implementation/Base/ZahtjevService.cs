@@ -316,6 +316,7 @@ namespace Web.Services.Implementation.Base
             zahtjev.ZahtjevKategorijaId = model.ZahtjevKategorijaId;
             zahtjev.ZahtjevPrioritetId = model.ZahtjevPrioritetId;
             zahtjev.ZahtjevTipId = model.ZahtjevTipId;
+            zahtjev.PocetakIzrade = model.PocetakIzrade;
 
             zahtjev.ZahtjevStatusId = OdrediDefaultniZahtjevStatusProjekta(projekatId).Id;
 

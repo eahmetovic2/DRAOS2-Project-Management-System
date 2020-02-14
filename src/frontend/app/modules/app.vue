@@ -8,7 +8,6 @@
 
 <script>
 import Vue from 'vue';
-
 import Auth from 'auth';
 
 import AuthMod from './auth/module';

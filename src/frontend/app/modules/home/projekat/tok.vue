@@ -12,6 +12,7 @@
         <v-card-text>
             
     <GSTC :config="config" @state="onState" />
+    
             
         </v-card-text>
     </material-card>
@@ -23,11 +24,12 @@ import {
     ZahtjevResource
 } from 'api/resources';
 import GSTC from "../components/GSTC";
+
 let subs = [];
 export default {
     name: 'TokProjekta',
     components: {
-        GSTC
+        GSTC,
     },
     props: ['omogucenoDodavanjeIFiltriranje'],
 
@@ -38,7 +40,7 @@ export default {
                 height: 500,
                 list: {
                     rows: {
-                        "1": {
+                        /* "1": {
                         id: "1",
                         label: "Row 1"
                         },
@@ -53,7 +55,7 @@ export default {
                         "4": {
                         id: "4",
                         label: "Row 4"
-                        }
+                        } */
                     },
                     columns: {
                         data: {
@@ -70,8 +72,8 @@ export default {
                 },
                 chart: {
                     items: {
-                        "a1": {
-              id: "a1",
+                        /* "1": {
+              id: "1",
               rowId: "1",
               label: "Item 1",
               time: {
@@ -105,7 +107,7 @@ export default {
                 start: new Date().getTime() + 10 * 24 * 60 * 60 * 1000,
                 end: new Date().getTime() + 12 * 24 * 60 * 60 * 1000
               }
-            },
+            }, */
                     }
                 }
             }
@@ -133,28 +135,44 @@ export default {
                 var zadaci = {};
                 for(var i= 0; i<tasks.length; i++) {   
                     var br = i+1;                 
-                    zadaci["" + tasks[i].id + ""] = tasks[i];
+                    //zadaci["" + tasks[i].id + ""] = tasks[i];
+                    this.$set(that.config.list.rows, tasks[i].id, tasks[i])    ;
                 }
-                that.config.list.rows = zadaci;
+                console.log("that.config.list.rows", that.config.list.rows)
+                //that.config.list.rows = zadaci;
 
                 var objekti = that.model.map(function(v){
+                    var boja = 'green';
+                    if(v.zahtjevStatus == 'Potrebno uraditi') {
+                        boja = 'red';
+                    }
+                    else if(v.zahtjevStatus == 'Radi se') {
+                        boja = 'orange';
+                    }
+                     
                     return {
-                        id: "a" + v.id + "",
+                        id: "" + v.id + "",
                         rowId: "" + v.id + "",
-                        label: v.naziv,
+                        label: v.zahtjevStatus,
                         time: {
-                            start: v.pocetakIzrade,
-                            end: v.pocetakIzrade
-                        } 
+                            start: new Date(v.pocetakIzrade).getTime(),
+                            end: new Date(v.pocetakIzrade).getTime() + 24 * 60 * 60 * 1000
+                        } ,
+                        style: {background:boja}
                     }}
                 );
-                var gant = {};
-                for(i= 0; i<objekti.length; i++) {   
-                    br = i+1;                 
-                    gant[objekti[i].id] = objekti[i];
+                for(i= 0; i<objekti.length-1; i++) {   
+                    br = i+1;             
+                    objekti[i].time.end = objekti[i+1].time.start;
                 }
-                that.config.chart.items = gant;
-                console.log("GANT", gant)
+                for(i= 0; i<objekti.length; i++) {   
+                    br = i+1;             
+                    this.$set(that.config.chart.items, objekti[i].id, objekti[i])    ;
+                    //gant[objekti[i].id] = objekti[i];
+                }
+                //that.config.chart.items = gant;
+                console.log("GANT", that.config.chart.items)
+                console.log("objekti", objekti)
 
             };
 
@@ -183,13 +201,6 @@ export default {
                 })
             );
         }
-    },
-    mounted() {
-        setTimeout(() => {
-            const item1 = this.config.chart.items["a1"];
-            item1.label = "label changed dynamically";
-            item1.time.end += 2 * 24 * 60 * 60 * 1000;
-        }, 2000);
     },
     beforeDestroy() {
         subs.forEach(unsub => unsub());

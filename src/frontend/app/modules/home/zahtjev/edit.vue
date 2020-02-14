@@ -376,8 +376,9 @@ export default {
                 zahtjev.zahtjevKategorijaId = that.zahtjevModel.kategorija;
                 zahtjev.zahtjevTipId = that.zahtjevModel.tip;
                 zahtjev.zahtjevPrioritetId = that.zahtjevModel.prioritet;
-                zahtjev.dodijeljeniKorisnikIme = that.zahtjevModel.dodijeljeniKorisnikIme;
+                zahtjev.pocetakIzrade = that.zahtjevModel.pocetakIzrade;
 
+                zahtjev.dodijeljeniKorisnikIme = that.zahtjevModel.dodijeljeniKorisnikIme;
                 var promise = ZahtjevResource().azurirajZahtjev({
                     zahtjevId: that.childZahtjevId
                 }, zahtjev);

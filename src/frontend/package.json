@@ -20,6 +20,7 @@
     "css2json": "0.0.4",
     "font-awesome": "^4.7.0",
     "gantt-elastic": "^1.0.11",
+    "gantt-elastic-header": "^0.1.11",
     "hchs-vue-charts": "1.2.8",
     "json-markup": "^1.1.0",
     "lodash.debounce": "^4.0.8",
