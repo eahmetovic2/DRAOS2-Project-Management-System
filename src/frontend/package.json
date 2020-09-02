@@ -13,7 +13,7 @@
   "private": true,
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "bootstrap-vue": "0.16.1",
+    "bootstrap-vue": "2.16.0",
     "chart.js": "^2.8.0",
     "chartist": "^0.11.2",
     "codemirror": "^5.28.0",
